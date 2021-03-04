@@ -17,3 +17,15 @@ Run php server
 
 ``port`` is required
 ``path`` is optional (start server in dirctory)
+
+**create**
+
+Create php telegram bot project
+
+``name`` is required and your progect's name
+
+Then you have to set port and bot token
+
+``public.bat`` is file for start public server
+
+``local.bat`` is file for start local server 
