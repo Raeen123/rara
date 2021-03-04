@@ -1,2 +1,2 @@
-start cmd /c local.abt 
+start cmd /c local.bat 
  public.bat

@@ -19,6 +19,15 @@ dirBot = os.path.dirname(os.path.abspath(__file__))+"\\Bot"
 # defs
 
 
+def copyDirectory(src, dest):
+    try:
+        shutil.copytree(src, dest)
+    except shutil.Error as e:
+        print('Directory not copied. Error: %s' % e)
+    except OSError as e:
+        print('Directory not copied. Error: %s' % e)
+
+
 def editfile(file, content):
     path = dirBot+'//'+file
     with open(path, "w") as f:
@@ -96,24 +105,17 @@ def php(port, path):
     subprocess.call(f"php -S localhost:{port} -t {path}")
 
 
-def copyDirectory(src, dest):
-    try:
-        shutil.copytree(src, dest)
-    except shutil.Error as e:
-        print('Directory not copied. Error: %s' % e)
-    except OSError as e:
-        print('Directory not copied. Error: %s' % e)
-
-
 @cli.command('create')
 @click.argument('name')
 def create(name):
     """
-        Create New Telegram bot project php
+        Create New Telegram bot project php <name>(required)
     """
-    port = int(click.prompt(style('Project Port ',fg='green')))
-    token = click.prompt(style('\nTelegram Bot Token ',fg='green'))
+    port = int(click.prompt(style('Project Port ', fg='green')))
+    token = click.prompt(style('\nTelegram Bot Token ', fg='green'))
     creatproject(name, port, token)
+
+
 def main():
     cli()
 
