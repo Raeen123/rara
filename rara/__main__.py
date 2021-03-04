@@ -28,7 +28,7 @@ def editfile(file, content):
 def Botedit(port, token):
     editfile('public.bat', f'rara public {port} token.txt')
     editfile('local.bat', f'rara php {port} src')
-    editfile('All.bat', f'start cmd /c rara php {port} src \n rara public {port} token.txt')
+    editfile('All.bat', f'start cmd /c local.abt \n public.bat')
     editfile('token.txt', token)
 
 
