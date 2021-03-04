@@ -9,6 +9,6 @@ Request(
     "sendMessage",
     [
         'chat_id' => $chat_id,
-        'text' => "Hello"
+        'text' => "Hello , Welcome to Rara"
     ]
 );
