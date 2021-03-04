@@ -1,1 +1,1 @@
-rara public 3030 ../token.txt
+rara public 8080 ../token.txt
