@@ -1,0 +1,8 @@
+setup.py
+rara/__init__.py
+rara/__main__.py
+rara.egg-info/PKG-INFO
+rara.egg-info/SOURCES.txt
+rara.egg-info/dependency_links.txt
+rara.egg-info/entry_points.txt
+rara.egg-info/top_level.txt
