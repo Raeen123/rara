@@ -26,10 +26,10 @@ def editfile(file, content):
 
 
 def Botedit(port, token):
-    editfile('public.bat', f'rara public {port} token.txt')
+    editfile('public.bat', f'rara public {port} src/token.txt')
     editfile('local.bat', f'rara php {port} src')
-    editfile('All.bat', f'start cmd /c local.abt \n public.bat')
-    editfile('token.txt', token)
+    editfile('All.bat', f'start cmd /c local.bat \n public.bat')
+    editfile('src/token.txt', token)
 
 
 def creatproject(name, port, token):

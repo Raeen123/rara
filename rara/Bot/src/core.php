@@ -1,5 +1,5 @@
 <?php
-$token = file_get_contents('../token.txt');
+$token = file_get_contents('token.txt');
 define('BOT_TOKEN', $token);
 define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
 
