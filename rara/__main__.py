@@ -12,11 +12,13 @@ import subprocess
 import shutil
 import os
 from time import sleep
+import sys
 # start
 banner = Figlet(font="slant")
 banner_txt = banner.renderText("RaRa")
 echo(style(banner_txt, fg='blue'))
-dirBot = os.path.dirname(os.path.abspath(__file__))+"\\Bot"
+dirmain = os.path.dirname(os.path.abspath(__file__))
+dirBot = dirmain+"\\Bot"
 # defs
 
 
@@ -33,6 +35,14 @@ def editfile(file, content):
     path = dirBot+'//'+file
     with open(path, "w") as f:
         f.write(content)
+
+
+def readcd():
+    cdpath = dirmain + "/data/cd.txt"
+    with open(cdpath) as f:
+        text = f.read()
+        res = text.replace("\n", "")
+        return res
 
 
 def Botedit(port, token):
@@ -116,8 +126,10 @@ def create(name):
     token = click.prompt(style('\nTelegram Bot Token ', fg='green'))
     vscode = str(click.prompt(style('\nOpen in vscode ?[y/n]', fg='green')))
     creatproject(name, port, token)
-    if vscode.lower == 'y':
-        subprocess.call("code "+name)   
+    if vscode.lower() == 'y':
+        os.system(f'cd > {dirmain}/data/cd.txt')
+        project = readcd()+"/"+name
+        os.system("code "+project)
 
 
 def main():
