@@ -11,6 +11,7 @@ import os.path
 import subprocess
 import shutil
 import os
+from time import sleep
 # start
 banner = Figlet(font="slant")
 banner_txt = banner.renderText("RaRa")
@@ -113,7 +114,10 @@ def create(name):
     """
     port = int(click.prompt(style('Project Port ', fg='green')))
     token = click.prompt(style('\nTelegram Bot Token ', fg='green'))
+    vscode = str(click.prompt(style('\nOpen in vscode ?[y/n]', fg='green')))
     creatproject(name, port, token)
+    if vscode.lower == 'y':
+        subprocess.call("code "+name)   
 
 
 def main():
