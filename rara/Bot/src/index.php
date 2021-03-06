@@ -7,7 +7,7 @@ use TelegramBot\TelegramBot;
 use rara\Option;
 $token = file_get_contents('token.txt');
 $bot = new TelegramBot($token);
-$rara = new Option();
+$rara = new Option($token);
 $update = $bot->getWebhookUpdate();
 $img = $rara->genfile('raeen.jpg');
 $buttons = [

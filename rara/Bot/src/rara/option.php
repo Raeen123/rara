@@ -1,12 +1,12 @@
 <?php
 
 namespace rara;
-
-$token = file_get_contents('../token.txt');
-define('BOT_TOKEN', $token);
-define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
 class Option
 {
+    public function __construct($token) {
+        define('BOT_TOKEN', $token);
+        define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
+    }
     public function encodeMessage($message, $index = 0)
     {
         return (json_decode(json_encode(($message)[$index]), true));
@@ -33,14 +33,5 @@ class Option
         curl_setopt($handle, CURLOPT_HTTPHEADER, array("Content-Type: application/json"));
         $result = curl_exec($handle);
         return $result;
-    }
-
-    public function setWebhook(bool $withport = false)
-    {
-        if ($withport) {
-            echo $this->Request("setWebhook", ['url' => $_SERVER['HTTP_HOST'] . '/' . 'index.php']);
-        } else {
-            echo $this->Request("setWebhook", ['url' => $_SERVER['SERVER_NAME'] . '/' . 'index.php']);
-        }
     }
 }
