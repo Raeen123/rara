@@ -37,14 +37,6 @@ def editfile(file, content):
         f.write(content)
 
 
-def readcd():
-    cdpath = dirmain + "/data/cd.txt"
-    with open(cdpath) as f:
-        text = f.read()
-        res = text.replace("\n", "")
-        return res
-
-
 def Botedit(port, token):
     editfile('public.bat', f'rara public {port} src/token.txt')
     editfile('local.bat', f'rara php {port} src')
@@ -127,8 +119,7 @@ def create(name):
     vscode = str(click.prompt(style('\nOpen in vscode ?[y/n]', fg='green')))
     creatproject(name, port, token)
     if vscode.lower() == 'y':
-        os.system(f'cd > {dirmain}/data/cd.txt')
-        project = readcd()+"/"+name
+        project = os.getcwd()+"/"+name
         os.system("code "+project)
 
 
