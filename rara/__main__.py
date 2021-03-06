@@ -100,13 +100,15 @@ def public(port, token=""):
 
 @cli.command('php')
 @click.argument('port')
-@click.argument('path', required=False, default='/')
+@click.argument('path', required=False)
 def php(port, path):
     """
     start php <port>(required) <path>
     """
-    subprocess.call(f"php -S localhost:{port} -t {path}")
-
+    if path:
+         subprocess.call(f"php -S localhost:{port} -t {path}")
+    else:
+         subprocess.call(f"php -S localhost:{port}")
 
 @cli.command('create')
 @click.argument('name')
