@@ -7,10 +7,6 @@ class Option
         define('BOT_TOKEN', $token);
         define('API_URL', 'https://api.telegram.org/bot' . BOT_TOKEN . '/');
     }
-    public function encodeMessage($message, $index = 0)
-    {
-        return (json_decode(json_encode(($message)[$index]), true));
-    }
     public function genfile($file)
     {
         $content = mime_content_type($file);
