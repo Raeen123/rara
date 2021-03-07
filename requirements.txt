@@ -1,0 +1,6 @@
+click
+pyngrok
+requests
+json
+pyfiglet
+colorama
