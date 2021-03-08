@@ -35,6 +35,6 @@ Then you have to set port and bot token
 
 `local.bat` is file for start local server
 
-For upload in host you should just upload `/src` then run `Server.php` for setWebhook on `index.php`
+For upload in host you should just upload `/src` and go to ``server.php`` and set your url
 
 in `server.php` we have `setWebhook($withport)` function , if `$withport` it true send url of site with port

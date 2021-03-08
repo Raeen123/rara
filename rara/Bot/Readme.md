@@ -8,4 +8,4 @@ For start just local host run ``local.bat``
 
 **Upload on Host**
 
-For this just upload ``/src`` and run ``server.php``
+For this just upload ``/src`` and go to ``server.php`` and set your url
