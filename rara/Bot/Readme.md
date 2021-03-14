@@ -11,4 +11,4 @@ see ``/tools/doc/heroku.md``
 
 **setHeroku**
 
-Set webhook on heroku app ( work when you create project)
+Set webhook on heroku app ( work when you create project) (write ``hook``)
