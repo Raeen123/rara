@@ -126,7 +126,8 @@ def create(name):
     vscode = str(click.prompt(style('\nOpen in vscode ?[y/n]', fg='green')))
     creatproject(name, port, token)
     project = os.getcwd()+"/"+name
-    command_cmd = 'cd '+project + "src & git init "
+    os.system('cd '+project + "src")
+    command_cmd = "git init "
     if heroku.lower() == 'y':
         command_cmd += "& heroku git: remote -a " + name
     os.system(command_cmd)
@@ -162,7 +163,6 @@ def setHeroku():
         echo(style("\nWebhook isn't set", bold=True, fg='red'))
         echo(
             style("\nERROR : "+result['description'], bold=True, fg='red'))
-    exit()
 
 
 def main():
