@@ -121,16 +121,9 @@ def create(name):
     """
     port = int(click.prompt(style('Project Port ', fg='green')))
     token = click.prompt(style('\nTelegram Bot Token ', fg='green'))
-    heroku = str(click.prompt(
-        style('\nConnect to heroku?[y/n]', fg='green')))
     vscode = str(click.prompt(style('\nOpen in vscode ?[y/n]', fg='green')))
     creatproject(name, port, token)
     project = os.getcwd()+"/"+name
-    os.system('cd '+project + "src")
-    command_cmd = "git init "
-    if heroku.lower() == 'y':
-        command_cmd += "& heroku git: remote -a " + name
-    os.system(command_cmd)
     if vscode.lower() == 'y':
         os.system("code "+project)
 
@@ -142,6 +135,16 @@ def push():
     """
     commit = click.prompt(style('Your commit ', fg='green'))
     os.system('git add . & git commit -am '+commit+' & git push heroku main')
+
+
+@cli.command('heroku')
+def heroku():
+    """
+        Heroku config
+    """
+    path = os.getcwd()
+    project = (path.split('\\'))[-1]
+    os.system("git init & heroku git:remote -a "+project)
 
 
 @cli.command('setHeroku')

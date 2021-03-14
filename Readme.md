@@ -33,6 +33,10 @@ Then you have to set port and bot token
 
 Push commits to heroku
 
+**Heroku**
+
+Config Heroku ( work when you create project)
+
 **setHeroku**
 
 Set webhook on heroku app ( work when you create project)

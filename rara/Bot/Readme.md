@@ -9,6 +9,10 @@ For this just upload ``/src`` and go to ``server.php`` and set your url
 
 see ``/tools/doc/heroku.md``
 
+**Heroku**
+
+Config Heroku (write ``heroku``)
+
 **setHeroku**
 
-Set webhook on heroku app ( work when you create project) (write ``hook``)
+Set webhook on heroku app  (write ``hook``)
