@@ -29,12 +29,6 @@ Create php telegram bot project
 
 Then you have to set port and bot token
 
-`All.bat` is file for start public and local server
+**push**
 
-`public.bat` is file for start public server
-
-`local.bat` is file for start local server
-
-For upload in host you should just upload `/src` and go to ``server.php`` and set your url
-
-in `server.php` we have `setWebhook($withport)` function , if `$withport` it true send url of site with port
+Push commits to heroku

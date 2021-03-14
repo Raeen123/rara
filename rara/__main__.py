@@ -38,9 +38,11 @@ def editfile(file, content):
 
 
 def Botedit(port, token):
-    editfile('public.bat', f'rara public {port} src/token.txt')
-    editfile('local.bat', f'rara php {port} src')
-    editfile('All.bat', f'start cmd /c local.bat \n public.bat')
+    editfile('tools/local/public.bat',
+             f'@echo off\nrara public {port} src/token.txt')
+    editfile('tools/local/local.bat', f'@echo off\nrara php {port} src')
+    editfile(
+        'local.bat', f'@echo off\ncd tools/local\nstart cmd /c local.bat \npublic.bat')
     editfile('src/token.txt', token)
 
 
@@ -106,9 +108,10 @@ def php(port, path):
     start php <port>(required) <path>
     """
     if path:
-         subprocess.call(f"php -S localhost:{port} -t {path}")
+        subprocess.call(f"php -S localhost:{port} -t {path}")
     else:
-         subprocess.call(f"php -S localhost:{port}")
+        subprocess.call(f"php -S localhost:{port}")
+
 
 @cli.command('create')
 @click.argument('name')
@@ -118,11 +121,26 @@ def create(name):
     """
     port = int(click.prompt(style('Project Port ', fg='green')))
     token = click.prompt(style('\nTelegram Bot Token ', fg='green'))
+    heroku = str(click.prompt(
+        style('\nConnect to heroku?[y/n]', fg='green')))
     vscode = str(click.prompt(style('\nOpen in vscode ?[y/n]', fg='green')))
     creatproject(name, port, token)
+    project = os.getcwd()+"/"+name
+    command_cmd = 'cd '+project + "src & git init "
+    if heroku.lower() == 'y':
+        command_cmd += "& heroku git: remote -a " + name
+    os.system(command_cmd)
     if vscode.lower() == 'y':
-        project = os.getcwd()+"/"+name
         os.system("code "+project)
+
+
+@ cli.command('push')
+def create():
+    """
+       Push source to heroku
+    """
+    commit = click.prompt(style('Your commit ', fg='green'))
+    os.system('git add . & git commit -am '+commit+' & git push heroku main')
 
 
 def main():

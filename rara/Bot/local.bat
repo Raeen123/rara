@@ -1,1 +1,4 @@
-rara php 8080 src
+@echo off
+cd tools/local
+start cmd /c local.bat 
+public.bat
