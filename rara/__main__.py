@@ -134,7 +134,7 @@ def create(name):
         os.system("code "+project)
 
 
-@ cli.command('push')
+@cli.command('push')
 def create():
     """
        Push source to heroku
