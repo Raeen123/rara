@@ -9,9 +9,9 @@ For this just upload ``/src`` and go to ``server.php`` and set your url
 
 see ``/tools/doc/heroku.md``
 
-**Heroku**
+**init**
 
-Config Heroku (write ``heroku``)
+Config git (git init) (write ``init``)
 
 **setHeroku**
 

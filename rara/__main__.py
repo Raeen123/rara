@@ -137,14 +137,12 @@ def push():
     os.system('git add . & git commit -am '+commit+' & git push heroku main')
 
 
-@cli.command('heroku')
-def heroku():
+@cli.command('init')
+def init():
     """
-        Heroku config
+        git init
     """
-    path = os.getcwd()
-    project = (path.split('\\'))[-1]
-    os.system("start cmd /c git init & heroku git:remote -a "+project)
+    os.system("start cmd /c git init")
 
 
 @cli.command('setHeroku')

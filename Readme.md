@@ -33,9 +33,9 @@ Then you have to set port and bot token
 
 Push commits to heroku
 
-**Heroku**
+**init**
 
-Config Heroku ( work when you create project)
+Config git (git init) ( work when you create project)
 
 **setHeroku**
 
