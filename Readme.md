@@ -37,6 +37,10 @@ Push commits to heroku
 
 Config git (git init) ( work when you create project)
 
+**Heroku**
+
+For first push (write ``heroku``)( work when you create project)
+
 **setHeroku**
 
 Set webhook on heroku app ( work when you create project)

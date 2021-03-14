@@ -13,6 +13,10 @@ see ``/tools/doc/heroku.md``
 
 Config git (git init) (write ``init``)
 
+**Heroku**
+
+For first push (write ``heroku``)
+
 **setHeroku**
 
 Set webhook on heroku app  (write ``hook``)
