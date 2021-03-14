@@ -144,7 +144,7 @@ def heroku():
     """
     path = os.getcwd()
     project = (path.split('\\'))[-1]
-    os.system("git init & heroku git:remote -a "+project)
+    os.system("start cmd /c git init & heroku git:remote -a "+project)
 
 
 @cli.command('setHeroku')
