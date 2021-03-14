@@ -15,6 +15,8 @@ Config git (git init) (write ``init``)
 
 **Heroku**
 
+Run this for remote ``heroku git:remote -a projectname``
+
 For first push (write ``heroku``)
 
 **setHeroku**
