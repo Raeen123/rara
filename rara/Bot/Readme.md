@@ -8,3 +8,7 @@ For this just upload ``/src`` and go to ``server.php`` and set your url
 **Upload on Heroku**
 
 see ``/tools/doc/heroku.md``
+
+**setHeroku**
+
+Set webhook on heroku app ( work when you create project)
