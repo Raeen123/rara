@@ -1,4 +1,4 @@
-**Rara** is a python cli
+**Rara** is a python cli for develop telegram bot with php
 
 ---
 
