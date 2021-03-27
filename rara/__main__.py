@@ -126,46 +126,6 @@ def create(name):
     project = os.getcwd()+"/"+name
     if vscode.lower() == 'y':
         os.system("code "+project)
-
-
-@cli.command('push')
-def push():
-    """
-       Push source to heroku
-    """
-    commit = click.prompt(style('Your commit ', fg='green'))
-    os.system('git add . & git commit -am '+commit+' & git push heroku main')
-
-
-@cli.command('init')
-def init():
-    """
-        git init
-    """
-    os.system("start cmd /c git init")
-
-
-@cli.command('setHeroku')
-def setHeroku():
-    """
-        Set webhook for heroku host in project
-    """
-    path = os.getcwd()
-    project = (path.split('\\'))[-1]
-    bot = token_read(path+'/src/token.txt')
-    send = "https://api.telegram.org/bot"+bot + \
-        "/setWebhook?url=https://"+project+".herokuapp.com"
-    api = requests.get(send)
-    text = api.text
-    result = json.loads(text)
-    if result['ok'] == True:
-        echo(style("\nWebhook is set", bold=True, fg='green'))
-    else:
-        echo(style("\nWebhook isn't set", bold=True, fg='red'))
-        echo(
-            style("\nERROR : "+result['description'], bold=True, fg='red'))
-
-
 def main():
     cli()
 

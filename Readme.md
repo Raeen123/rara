@@ -28,19 +28,3 @@ Create php telegram bot project
 `name` is required and your progect's name
 
 Then you have to set port and bot token
-
-**push**
-
-Push commits to heroku
-
-**init**
-
-Config git (git init) ( work when you create project)
-
-**Heroku**
-
-For first push (write ``heroku``)( work when you create project)
-
-**setHeroku**
-
-Set webhook on heroku app ( work when you create project)

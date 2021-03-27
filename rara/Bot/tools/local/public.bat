@@ -1,2 +1,2 @@
 @echo off
-rara public 8080 src/token.txt
+rara public 8080 ../../src/token.txt
